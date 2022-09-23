@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gui';
+   student: Student = {name: "", id: "", email: ""};
+}
+
+export class Student {
+  name: string = "";
+  id: string = "";
+  email: string = "";
 }
