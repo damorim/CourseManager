@@ -21,3 +21,11 @@
    <td><button (click)="save(student)">Add</button></td>
 </tr>
 </table>
+
+<ul>
+  <li *ngFor="let s of students">
+    <span>{{s.name}}</span>,
+    <span>{{s.id}}</span>,
+    <span>{{s.email}}</span>
+  </li>
+</ul>
