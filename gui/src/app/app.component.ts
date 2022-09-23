@@ -17,9 +17,12 @@ export class AppComponent {
   students: Student[] = [];
 
   save(s: Student): void {
-    this.studentService.save(s);
-    this.students.push(s);
-    this.student = {name: "", id: "", email: ""};
+     if (this.studentService.save(s)) {
+       this.students.push(s);
+       this.student = {name: "", id: "", email: ""};       
+     } else {
+       this.student.id = "";
+     }
   }
 
 }
