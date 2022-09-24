@@ -11,9 +11,8 @@ import { StudentService } from './student.service';
 })
 
 export class AppComponent {
+  constructor(private studentService: StudentService) {}
   student: Student = {name: "", id: "", email: ""};   
-
-  studentService = new StudentService();
   students: Student[] = [];
   duplicateID: boolean = false;
 
