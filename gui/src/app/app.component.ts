@@ -22,6 +22,7 @@ export class AppComponent {
        this.student = {name: "", id: "", email: ""};       
      } else {
        this.student.id = "";
+       alert("A student with this ID has been already registered.");
      }
   }
 
