@@ -1,3 +1,5 @@
+<html (mousemove)="onMove()">
+  
 <h1>
   Course Manager
 </h1>
@@ -14,6 +16,9 @@
 <tr>
    <td><label>ID </label></td>
    <td><input [(ngModel)]="student.id" ></td>
+   <td *ngIf="duplicateID">
+     A student with this ID has been already registered
+   </td>   
 </tr>
 <tr>
    <td><label>e-mail </label></td>
@@ -24,10 +29,11 @@
 
 
 <ul class="students">
-<ul>
   <li *ngFor="let s of students">
     <span>{{s.name}}</span>,
     <span>{{s.id}}</span>,
     <span>{{s.email}}</span>
   </li>
 </ul>
+
+</html>

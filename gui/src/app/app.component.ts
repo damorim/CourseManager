@@ -15,15 +15,19 @@ export class AppComponent {
 
   studentService = new StudentService();
   students: Student[] = [];
+  duplicateID: boolean = false;
 
   save(s: Student): void {
      if (this.studentService.save(s)) {
        this.students.push(s);
        this.student = {name: "", id: "", email: ""};       
      } else {
-       this.student.id = "";
-       alert("A student with this ID has been already registered.");
+       this.duplicateID = true;
      }
+  }
+
+  onMove(): void {
+     this.duplicateID = false;
   }
 
 }
